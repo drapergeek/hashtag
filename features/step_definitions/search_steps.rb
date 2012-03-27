@@ -23,3 +23,21 @@ When /^I enter "([^"]*)" in the search box$/ do |search_term|
   fill_in "Search", with: search_term
 end
 
+Given /^Twitter responds to the search "([^"]*)" with the tweets:$/ do |arg1, table|
+  TwitterMock.stub_search_response(search_term, table.hashes)
+end
+
+When /^I search for hash tag "([^"]*)"$/ do |arg1|
+  pending # express the regexp above with the code you wish you had
+end
+
+Then /^I should see the following tweets:$/ do |table|
+  # table is a Cucumber::Ast::Table
+  pending # express the regexp above with the code you wish you had
+end
+
+Then /^I should not see the following tweets:$/ do |table|
+  # table is a Cucumber::Ast::Table
+  pending # express the regexp above with the code you wish you had
+end
+
