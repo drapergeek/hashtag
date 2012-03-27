@@ -5,10 +5,21 @@ end
 Then /^I should see "([^"]*)"$/ do |search_header|
   page.should have_css("h2", text:search_header)
 end
-j
+
 Then /^I should see tweets with "([^"]*)" in them$/ do |search_term|
-  all("li.tweet").each do |tweet_li|
-    tweet_li.text.should include(search_term.first)
-  end
+  page.should have_css("li.tweet", search_term)
+end
+
+When /^I go to the search page$/ do
+  visit '/'
+end
+
+When /^I enter "([^"]*)" in the search box and submit$/ do |search_term|
+  fill_in "Search", with: search_term
+  click_button "Search"
+end
+
+When /^I enter "([^"]*)" in the search box$/ do |search_term|
+  fill_in "Search", with: search_term
 end
 
