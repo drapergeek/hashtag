@@ -1,0 +1,7 @@
+<h2>You searched for <%= @search_term %></h2>
+<h3>There were <%= @tweets.count  %> tweets found with that term</h3>
+<ul>
+  <%= @tweets.each do |t| %>
+    <li class="tweet"><%= t.text %>
+  <% end %>
+</ul>

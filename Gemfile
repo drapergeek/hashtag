@@ -3,6 +3,7 @@ source 'https://rubygems.org'
 gem 'rails', '3.2.2'
 
 gem 'sqlite3'
+gem 'twitter'
 
 group :development, :test do
   gem "rspec-rails"
@@ -15,6 +16,7 @@ group :test do
   gem "factory_girl_rails"
   gem 'database_cleaner'
   gem "shoulda-matchers"
+  gem "launchy"
 end
 
 group :assets do
